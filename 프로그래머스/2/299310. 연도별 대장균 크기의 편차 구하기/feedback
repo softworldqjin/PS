@@ -1,20 +1,17 @@
-select  *
-from fish_info i
-inner join fish_name_info ni on i.fish_type = ni.fish_type
-group by i.fish_type
-order by i.length desc
-limit 1
+그룹안에서 가장 큰값 - 그룹에 해당하는 각각의 값들을 뺄때 
 
 
-이거 오류나는이유
-실행 순서 떄문임
-from 
-join
-group by
-select 
-order by
-limit
 
-그룹화했음, 그리고 select 하려니까 그룹 중에 뭘 select할지 구분 못함
-order by는 select된 후에 정렬하는거임
-그다음에 limit 로 끊는거고
+주어지는 테이블과 이 테이블을 select해서 또다른 테이블 하나를 만들어준다.
+join으로 합치고 테이블 별칭.열 이름 - 테이블 별칭. 열 이름
+해서 또 새로운 테이블을 만들면 된다.
+
+join할때 주의점
+같은 행끼리 연산을 위해,, 같은 행에 묶일려면, 두 테이블 간에 겹치는 열이 하나는 있어야한다.
+
+가상 테이블을 만들기위해 서브쿼리를 쓴다.
+from from ECOLI_DATA 별칭
+inner join ( 
+select 문,, 이때 각 열은 별칭을 꼭 만들어야한다.
+) 별칭
+on 조건식(여기서 별칭.~~ = 별칭.별칭)
