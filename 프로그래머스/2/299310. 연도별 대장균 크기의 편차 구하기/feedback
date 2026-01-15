@@ -1,0 +1,20 @@
+select  *
+from fish_info i
+inner join fish_name_info ni on i.fish_type = ni.fish_type
+group by i.fish_type
+order by i.length desc
+limit 1
+
+
+이거 오류나는이유
+실행 순서 떄문임
+from 
+join
+group by
+select 
+order by
+limit
+
+그룹화했음, 그리고 select 하려니까 그룹 중에 뭘 select할지 구분 못함
+order by는 select된 후에 정렬하는거임
+그다음에 limit 로 끊는거고
