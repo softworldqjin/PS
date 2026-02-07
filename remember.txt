@@ -33,6 +33,11 @@ StringBuilder sb = new StringBuilder();
 sb.charAt(숫자)
 sb 객체에 저장된 char타입 배열 0번부터 N번까지 char타입으로 반환됨
 
+2675
+>
+종이에 반복문 for (i = 0; i < count; i++) 이렇게 써놓고
+그대로 코드로 옮김.
+i를 초기화해야 되는 걸 놓쳤음, 종이에 반복문 쓸 때 생략하지말고 int i = 0 꼭 써놓고 실수 예방하자
 int num = Integer.parseInt(String str)
 String 타입(char 타입 X) 문자 그대로 int 타입 반환
 "3" -> 3
