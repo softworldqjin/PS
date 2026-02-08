@@ -83,3 +83,11 @@ str = str.trim();
 String[] arr = str.split(" ");
 arr = [""]
 arr.length = 1
+
+2908
+>
+변수명 StrN2 로 초기화해놓고 아래에서 strN2으로 써놨음
+그래서 컴파일에러 발생함, 변수명 똑바로 써놓고 쓰자, 첫글자는 소문자로
+
+StringBuilder 메서드 reverse()은 char타입 배열 저장되있는 것을 거꾸로 뒤집음
+StringBuilder 메서드 toString()은 String타입 변수 return함
