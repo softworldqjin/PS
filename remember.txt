@@ -96,6 +96,7 @@ StringBuilder 메서드 toString()은 String타입 변수 return함
 >
 while (scanner.hasNextLine()){
   String str = scanner.nextLine();
+}
 
 입력
 hello\n
@@ -106,3 +107,8 @@ scanner.hasNextLine()에서 입력 확인 -> true
 scanner.nextLine()에서 입력 받음 -> hello\n 까지 읽고, 순수 문자열만 반환함. 개행은 버림
 결국 hasNextLine() -> nextLine() 순으로, 확인하고 입력받음. 
 hello\n 있는거 확인 -> true, hello\n 까지 읽고, 순수 문자열만 반환해서 str에 저장, 개행은 버림.
+
+eof란 end of file으로, ctrl + d 입력하여 eof 신호를 주어서 입력을 그만 받음.
+파일 끝에서 반복문 종료하도록 하는 문제에서 eof 를 알아야함.
+eof와 관련된 함수 hasNext() - 공백 및 개행을 구분자로 하여 토큰으로 나눠서 존재하는지 true or false
+hasNextLine() - 한줄씩 읽음 true or false
