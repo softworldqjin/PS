@@ -91,3 +91,18 @@ arr.length = 1
 
 StringBuilder 메서드 reverse()은 char타입 배열 저장되있는 것을 거꾸로 뒤집음
 StringBuilder 메서드 toString()은 String타입 변수 return함
+
+11718
+>
+while (scanner.hasNextLine()){
+  String str = scanner.nextLine();
+
+입력
+hello\n
+java\n
+spring\n
+
+scanner.hasNextLine()에서 입력 확인 -> true
+scanner.nextLine()에서 입력 받음 -> hello\n 까지 읽고, 순수 문자열만 반환함. 개행은 버림
+결국 hasNextLine() -> nextLine() 순으로, 확인하고 입력받음. 
+hello\n 있는거 확인 -> true, hello\n 까지 읽고, 순수 문자열만 반환해서 str에 저장, 개행은 버림.
