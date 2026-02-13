@@ -6,11 +6,8 @@ public class Main{
         int num = scanner.nextInt();
         
         for (int i = 0; i < num; i++){
-            System.out.print(" ".repeat(num - i - 1));
-            for (int j = 0; j < i + 1; j++){
-                System.out.print("*");
-            }
-            System.out.println();
+            System.out.print(" ".repeat(num - 1 -i));
+            System.out.println("*".repeat(i + 1));
         }
     }
 }
