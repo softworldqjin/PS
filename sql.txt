@@ -3,3 +3,5 @@ WHERE LIKE
 WHERE 주소 LIKE '강원도%'
 
 DATE_FORMAT(날짜, '%Y-%m-%d')
+> 
+DATE_FORMAT('2026-02-02', %Y-%m') 결과는 '2026-02'
