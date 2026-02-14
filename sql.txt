@@ -1,0 +1,3 @@
+WHERE LIKE
+>
+WHERE 주소 LIKE '강원도%'
