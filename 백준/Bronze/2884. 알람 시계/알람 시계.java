@@ -2,14 +2,16 @@ import java.util.Scanner;
 
 public class Main{
     public static void main(String[] args){
-        Scanner input = new Scanner(System.in);
-        int hour = input.nextInt();
-        int min = input.nextInt();
-        int result = hour * 60 + min - 45;
-        // result가 -15인 경우
-        if (result < 0){
-            result = 24 * 60 + result;
+        Scanner sc = new Scanner(System.in);
+        int hour = sc.nextInt();
+        int min = sc.nextInt();
+        int total = hour * 60 + min - 45;
+        
+        if (total < 0){
+            total = 24 * 60 + min - 45;
         }
-        System.out.println((result / 60) + " " + (result % 60));
+        int hour1 = total / 60 % 24;
+        int min1 = total % 60;
+        System.out.printf("%d %d", hour1, min1);
     }
 }
