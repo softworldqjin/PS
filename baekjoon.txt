@@ -112,3 +112,11 @@ eof란 end of file으로, ctrl + d 입력하여 eof 신호를 주어서 입력�
 파일 끝에서 반복문 종료하도록 하는 문제에서 eof 를 알아야함.
 eof와 관련된 함수 hasNext() - 공백 및 개행을 구분자로 하여 토큰으로 나눠서 존재하는지 true or false
 hasNextLine() - 한줄씩 읽음 true or false
+
+2577
+>
+Integer.intValue()는 인스턴스 메서드이다. 클래스 메서드가 아니므로, Integer. 뒤에 intValue() 쓰지 못한다.
+Integer integer = Integer.valueOf(3); -> int intValue = integer.intValue(); 저장된 3이 반환된다.
+
+Integer.parseInt(String타입 문자열)은 클래스 메서드이다. 
+String str = "123" -> int intValue = Integer.parseInt(str); "123"이 123으로 반환된다.
