@@ -1,7 +1,15 @@
-WHERE LIKE
+컬럼명 LIKE '문자'
 >
 WHERE 주소 LIKE '강원도%'
 
 DATE_FORMAT(날짜, '%Y-%m-%d')
 > 
 DATE_FORMAT('2026-02-02', %Y-%m') 결과는 '2026-02'
+
+컬럼명 BETWEEN # AND # 
+>
+age BETWEEN 20 AND 29 는 20이상 29이하
+
+YEAR(DATETIME)
+>
+YEAR('2022-12-12') 결과는 2022
