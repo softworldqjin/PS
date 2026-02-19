@@ -13,3 +13,7 @@ age BETWEEN 20 AND 29 는 20이상 29이하
 YEAR(DATETIME)
 >
 YEAR('2022-12-12') 결과는 2022
+
+데이터 in (컬럼명, 컬럼명, 컬럼명,,,)
+>
+WHERE 'Python' in (SKILL_1, SKILL_2, SKILL_3)
