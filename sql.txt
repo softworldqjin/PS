@@ -17,3 +17,16 @@ YEAR('2022-12-12') 결과는 2022
 데이터 in (컬럼명, 컬럼명, 컬럼명,,,)
 >
 WHERE 'Python' in (SKILL_1, SKILL_2, SKILL_3)
+
+조건에 맞는 개발자 찾기
+>
+select  DISTINCT # Python과 C# 모두 할줄알아 중복되면 DISTINCT로 중복제거
+        d.ID,
+        d.EMAIL,
+        d.FIRST_NAME,
+        d.LAST_NAME
+from DEVELOPERS d
+inner join SKILLCODES s on d.SKILL_CODE & s.CODE ## 비트연산해서 0이 아닌(true)결과인 갖고있는 스킬들이 행으로 추가됨, 예를 들어 ID 1 C++추가, ID 1 Python 추가, ID 1 C# 추가
+                                                 ## 여기서 같은 ID 여러개 중복됨
+where s.NAME in ('Python', 'C#') ## 한 사람 당 추가된 여러 스킬들 중에 Python이나 C#만 남김
+order by d.ID ASC;
