@@ -3,24 +3,22 @@ import java.util.Stack;
 
 public class Main{
     public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
         Stack<Integer> stack = new Stack<>();
-        int count = sc.nextInt();
+        Scanner sc = new Scanner(System.in);
         
+        int count = sc.nextInt();
         for (int i = 0; i < count; i++){
-            int num = sc.nextInt();
-            if (num == 0){
+            int x = sc.nextInt();
+            if (x == 0){
                 stack.pop();
             } else {
-                stack.push(num);
+                stack.push(x);
             }
+            
         }
         int sum = 0;
-        while (true){
-            if (stack.empty()){
-                break;
-            }
-            sum += stack.pop();
+        for (Integer i : stack){
+            sum += i;
         }
         
         System.out.println(sum);
