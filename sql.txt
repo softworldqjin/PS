@@ -30,3 +30,12 @@ inner join SKILLCODES s on d.SKILL_CODE & s.CODE ## 비트연산해서 0이 아�
                                                  ## 여기서 같은 ID 여러개 중복됨
 where s.NAME in ('Python', 'C#') ## 한 사람 당 추가된 여러 스킬들 중에 Python이나 C#만 남김
 order by d.ID ASC;
+
+JOIN 해서 특정 컬럼 세기 COUNT(컬럼명) 
+>
+select  e1.ID,
+        count(e2.ID) as 'CHILD_COUNT' <<<< 밑에서 GROUP BY로 e1테이블의 ID컬럼 데이터값 같은거끼리 묶었는데, JOIN해온 e2테이블의 ID컬럼의 존재개수를 센다! NULL일 경우 카운트 안함!
+from ECOLI_DATA e1 
+left join ECOLI_DATA e2 on e1.ID = e2.PARENT_ID
+group by e1.ID
+order by e1.ID ASC
