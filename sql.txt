@@ -39,3 +39,11 @@ from ECOLI_DATA e1
 left join ECOLI_DATA e2 on e1.ID = e2.PARENT_ID
 group by e1.ID
 order by e1.ID ASC
+
+CASE문
+>
+CASE
+    WHEN 조건1 THEN 결과1
+    WHEN 조건2 THEN 결과2
+    ELSE 결과3
+END as 별칭
