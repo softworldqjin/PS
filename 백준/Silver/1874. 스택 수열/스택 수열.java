@@ -1,55 +1,31 @@
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.*;
+import java.io.*;
 
 public class Main{
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        int num = sc.nextInt();
-        int[] x = new int[num];
-        
-        for (int i = 0; i < num; i++){
-            x[i] = sc.nextInt();
-        }
-        
-        int count = 0;
-        int i = 1;
-        Stack<Integer> stack = new Stack<>();
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
         
-        while (true){
-            if (i == 1){
-                stack.push(i++);
-                sb.append("+").append("\n");
-            } else {
-                if (stack.empty()){
-                    if (i == num + 1){
-                        break;
-                    }
-                    stack.push(i++);
-                    sb.append("+").append("\n");
-                } else {
-                    if (stack.peek() == x[count]){
-                        if (count == num){
-                            break;
-                        }
-                        stack.pop();
-                        count++;
-                        sb.append("-").append("\n");
-                    } else {
-                        if (i == num + 1){
-                            break;
-                        }
-                        stack.push(i++);
-                        sb.append("+").append("\n");
-                    }
-                }
-            }
-        }
+        int n = Integer.parseInt(br.readLine());
+        Deque<Integer> stack = new ArrayDeque<>();
+        int cnt = 1;
         
-        if (stack.empty()){
-            System.out.println(sb);
-        } else {
-            System.out.println("NO");
+        for (int i = 0; i < n; i++){
+            int t = Integer.parseInt(br.readLine());
+            
+            while (cnt <= t){
+                stack.push(cnt++);
+                sb.append("+\n");
+            }
+            
+            if (stack.peek() != t){
+                System.out.println("NO");
+                return;
+            }
+            
+            stack.pop();
+            sb.append("-\n");
         }
+        System.out.println(sb);
     }
 }
