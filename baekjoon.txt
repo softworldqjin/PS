@@ -120,3 +120,14 @@ Integer integer = Integer.valueOf(3); -> int intValue = integer.intValue(); 저�
 
 Integer.parseInt(String타입 문자열)은 클래스 메서드이다. 
 String str = "123" -> int intValue = Integer.parseInt(str); "123"이 123으로 반환된다.
+
+10845
+>
+Deque 자료구조
+offer(x) 
+poll()         없으면 NULL 반환
+peekFirst()    없으면 NULL 반환
+peekLast()     없으면 NULL 반환
+size()         0 ~ N개 반환
+isEmpty()      boolean타입 true, false 반환
+
