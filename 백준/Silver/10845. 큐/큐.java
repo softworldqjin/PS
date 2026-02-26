@@ -1,59 +1,51 @@
 import java.util.*;
+import java.io.*;
 
 public class Main{
-    public static void main(String[] args){
-        Deque<Integer> queue = new ArrayDeque<>();
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws Exception{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
+        Deque<Integer> q = new ArrayDeque<>();
+        int n = Integer.parseInt(br.readLine());
         
-        int n = sc.nextInt();
         for (int i = 0; i < n; i++){
-            String option = sc.next();
+            String s = br.readLine();
+            String option = s.split(" ")[0];
             
             Integer x;
-            switch(option){
-                case "push":
-                    x = sc.nextInt();
-                    queue.offer(x);
-                    break;
-                    
-                case "pop":
-                    x = queue.poll();
-                    if (x == null){
-                        x = -1;
-                    }
-                    System.out.println(x);
-                    break;
-                    
-                case "size":
-                    x = queue.size();
-                    System.out.println(x);
-                    break;
-                
-                case "empty":
-                    if (queue.isEmpty()){
-                        x = 1;
-                    } else {
-                        x = 0;
-                    }
-                    System.out.println(x);
-                    break;
-                    
-                case "front":
-                    x = queue.peekFirst();
-                    if (x == null){
-                        x = -1;
-                    }
-                    System.out.println(x);
-                    break;
-                
-                case "back":
-                    x = queue.peekLast();
-                    if (x == null){
-                        x = -1;
-                    }
-                    System.out.println(x);
-                    break;
+            if ("push".equals(option)){
+                x = Integer.parseInt(s.split(" ")[1]);
+                q.offer(x);
+            } else if ("pop".equals(option)){
+                x = q.poll();
+                if (x == null){
+                    x = -1;
+                }
+                sb.append(x).append('\n');
+            } else if ("size".equals(option)){
+                x = q.size();
+                sb.append(x).append('\n');
+            } else if ("empty".equals(option)){
+                if (q.isEmpty()){
+                    x = 1;
+                } else {
+                    x = 0;
+                }
+                sb.append(x).append('\n');
+            } else if ("front".equals(option)){
+                x = q.peekFirst();
+                if (x == null){
+                    x = -1;
+                }
+                sb.append(x).append('\n');
+            } else if ("back".equals(option)){
+                x = q.peekLast();
+                if (x == null){
+                    x = -1;
+                }
+                sb.append(x).append('\n');
             }
         }
+        System.out.println(sb);
     }
 }
