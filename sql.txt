@@ -47,3 +47,8 @@ CASE
     WHEN 조건2 THEN 결과2
     ELSE 결과3
 END as 별칭
+
+IFNULL(값, 대체값) vs NULLIF(값1, 값2)
+>
+IFNULL(값, 대체값) -> 값이 NULL이면 대체값 반환
+NULLIF(값1, 값2)   -> 값1 과 값2 같으면 NULL 반환
