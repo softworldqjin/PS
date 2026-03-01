@@ -52,3 +52,16 @@ IFNULL(값, 대체값) vs NULLIF(값1, 값2)
 >
 IFNULL(값, 대체값) -> 값이 NULL이면 대체값 반환
 NULLIF(값1, 값2)   -> 값1 과 값2 같으면 NULL 반환
+
+CASE NTILE(나눌개수) OVER (order by 컬럼명 DESC 또는 ASC))
+4개 나누면 0~25퍼 26~50퍼, 51~75퍼, 76~100퍼 로 나뉘어서 정해준 값 들어감
+>
+select  ID,
+        CASE NTILE(4) OVER (order by SIZE_OF_COLONY DESC)
+            when 1 then 'CRITICAL'
+            when 2 then 'HIGH'
+            when 3 then 'MEDIUM'
+            when 4 then 'LOW'
+        end as 'COLONY_NAME'
+from ECOLI_DATA
+order by ID ASC;
