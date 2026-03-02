@@ -65,3 +65,31 @@ select  ID,
         end as 'COLONY_NAME'
 from ECOLI_DATA
 order by ID ASC;
+
+UNION문
+>
+세로로 테이블을 합친다. 각 테이블의 컬럼명을 같게 해서 붙여야 한다.
+WHERE 조건절은 각 테이블에 명시해야 한다. ORDER BY는 마지막에 한번 하면 된다.
+
+SELECT * FROM TABLE1
+WHERE ~~
+UNION
+SELECT * FROM TABLE2
+WHERE ~~
+
+서브 쿼리 JOIN
+>
+서브쿼리로 만든 가상 테이블의 컬럼 = SELECT 절에 명시한 컬럼만 존재한다.
+
+select *
+from FOOD_PRODUCT f
+join (
+select CATEGORY, MAX(PRICE) as MAXPRICE
+from FOOD_PRODUCT
+group by CATEGORY
+) m
+on f.CATEGORY = m.CATEGORY
+
+JOIN → 컬럼은 전부 합쳐짐
+ON → 조건 맞는 행만 결합
+SELECT → 합쳐진 테이블에서 최종적으로 보여줄 컬럼만 선택
