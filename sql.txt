@@ -93,3 +93,11 @@ on f.CATEGORY = m.CATEGORY
 JOIN → 컬럼은 전부 합쳐짐
 ON → 조건 맞는 행만 결합
 SELECT → 합쳐진 테이블에서 최종적으로 보여줄 컬럼만 선택
+
+WHERE 서브쿼리
+>
+특정 값을 가져와서 조건문 수행
+
+where VIEWS = (
+select max(VIEWS)
+from USED_GOODS_BOARD)
