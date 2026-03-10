@@ -131,3 +131,7 @@ peekLast()     없으면 NULL 반환
 size()         0 ~ N개 반환
 isEmpty()      boolean타입 true, false 반환
 
+4949
+>
+toCharArray() 로 향상된 for문 돌리기
+isEmpty() 타이핑 실수 주의
