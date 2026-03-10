@@ -133,5 +133,7 @@ isEmpty()      boolean타입 true, false 반환
 
 4949
 >
+코드 작성 후 테스트 케이스 2번이상 직접 해보고, 제출할 것
+
 toCharArray() 로 향상된 for문 돌리기
 isEmpty() 타이핑 실수 주의
