@@ -137,3 +137,14 @@ isEmpty()      boolean타입 true, false 반환
 
 toCharArray() 로 향상된 for문 돌리기
 isEmpty() 타이핑 실수 주의
+
+3986
+>
+Deque<>() dq = new ArrayDeque<>()
+dq.push(1);
+dq.push(2);
+dq.push(3);
+
+front [3, 2, 1] back
+push() 메소드는 front에 넣음, pop() 메소드는 front에서 뺌
+peek() 메소드는 front에서 첫 번째 요소 확인, peekLast() 메소드는 back에서 첫 번째 요소 확인
