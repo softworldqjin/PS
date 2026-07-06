@@ -1,5 +1,6 @@
-select f.FLAVOR as 'FLAVOR'
+select f.FLAVOR
 from FIRST_HALF f
-inner join ICECREAM_INFO i on f.FLAVOR = i.FLAVOR
-where TOTAL_ORDER > 3000 and INGREDIENT_TYPE = 'fruit_based'
-order by TOTAL_ORDER DESC;
+join ICECREAM_INFO i 
+on f.FLAVOR = i.FLAVOR
+where f.TOTAL_ORDER > 3000 and i.INGREDIENT_TYPE = 'fruit_based'
+order by f.TOTAL_ORDER DESC;
