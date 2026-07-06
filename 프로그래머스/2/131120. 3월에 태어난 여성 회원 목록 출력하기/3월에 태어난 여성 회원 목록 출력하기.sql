@@ -1,8 +1,7 @@
 select  MEMBER_ID,
         MEMBER_NAME,
         GENDER,
-        DATE_FORMAT(DATE_OF_BIRTH, '%Y-%m-%d') as 'DATE_OF_BIRTH'
+        DATE_OF_BIRTH
 from MEMBER_PROFILE
-where MONTH(DATE_OF_BIRTH) = 3 and TLNO is not NULL 
-and GENDER = 'W'
-order by MEMBER_ID ASC;
+where TLNO is not NULL and GENDER = 'W' and month(DATE_OF_BIRTH) = 3 
+order by MEMBER_ID asc
